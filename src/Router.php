@@ -27,6 +27,6 @@ class Router extends BaseRouter {
             $response['body'] = file_get_contents(__DIR__.'/../static/index.html');
             $response['headers'] = ['Content-Type' => 'text/plain'];
         }
-        return $response;
+        return new Response($response['code'], $response['headers'], $response['body']);
     }
 }
